@@ -1,16 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin: auto;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-  margin: 10px;
-
-}
 
 nav {
-  display: flex;
+  display: block;
+  width: 100%;
 
 }
 
@@ -18,4 +18,74 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+div {
+  width: 60vmin;
+  height: 60vmin;
+  padding: 2vmin;
+  margin-top: 4vmin;
+  display: block;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  margin: 1vmin 0;
+}
+
+select {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  margin: 1vmin 0;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 4vmin;
+  text-align: center;
+}
+
+
+button {
+  font-size: 2vmin;
+  background-color: #111;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.petDivs {
+  display: inline-block;
+  width: 20vmin;
+  height: 30vmin;
+  border: 1vmin solid #111;
+  text-align: center;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }

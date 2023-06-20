@@ -5,6 +5,7 @@ const petSchema = new Schema({
     breed: { type: String, enum: ['dogs', 'cats', 'fish', 'birds'] },
     age: { type: Number, default: 1 },
     name: String,
+    // image: { data: Buffer, contentType: String },
     gender: { type: String, enum: ['female', 'male'] },
     weight: Number
 }, {

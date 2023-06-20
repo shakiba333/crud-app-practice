@@ -1,42 +1,13 @@
 <%- include('../partials/header') %>
 
-    <h2>Movie List</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>breed</th>
-                <th>age</th>
-                <th>name</th>
-                <th>gender</th>
-                <th>weight</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Write the line of EJS to iterate over movies using forEach -->
-            <% pets.forEach(function(p){%>
+    <a href="/pets/">
+        <div class="petDivs">
 
-
-                <tr>
-                    <td>
-                        <%= p.breed %>
-                    </td>
-                    <td>
-                        <%= p.age%>
-                    </td>
-                    <td>
-                        <%= p.name %>
-                    </td>
-                    <td>
-                        <%= p.gender %>
-                    </td>
-                    <!-- finish the ternary expression to display ' Yes' or 'Nope' -->
-                    <td>
-                        <%= p.weight %>
-                    </td>
-                </tr>
-                <!-- Close the forEach using EJS here -->
-                <%})%>
-        </tbody>
-    </table>
-
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"
+                alt="">
+            <p>
+                cats
+            </p>
+        </div>
+    </a>
     <%- include('../partials/footer') %>
