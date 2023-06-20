@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+    <h2>Enter a New Pet</h2>
+    <form action="/pets" method="POST">
+        <label>breed
+            <select name="breed">
+                <option value="cats">cats</option>
+                <option value="dogs">dogs</option>
+                <option value="fish">fish</option>
+                <option value="birds">birds</option>
+            </select>
+        </label><br>
+        <label>age:
+            <input type="number" name="age">
+        </label><br>
+
+        <label>gender:
+            <select name="gender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+        </label><br>
+        <label>name:
+            <input type="text" name="name">
+        </label><br>
+        <label>weight:
+            <input type="number" name="weight">
+        </label><br>
+        <button type="submit">Add a Pet</button>
+    </form>
+    <p>
+        <%= errorMsg %>
+    </p>
+    <%- include('../partials/footer') %>
