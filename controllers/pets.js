@@ -4,7 +4,9 @@ module.exports = {
     create,
     index,
     show,
-    edit
+    edit,
+    update,
+    delete: deletePet
 };
 
 function newPets(req, res) {
@@ -21,35 +23,43 @@ async function create(req, res) {
     }
 }
 
-async function show(req, res) {
-    const { id } = req.params;
-    const pet = await Pet.findOne({ _id: id })
-    res.render('pets/show', {
-        p: pet
-    })
-}
-// async function index(req, res) {
-//     const cats = await Pet.findOne({ breed: 'cats' });
-//     const dogs = await Pet.findOne({ breed: 'dogs' });
-//     const fish = await Pet.findOne({ breed: 'fish' });
-//     const birds = await Pet.findOne({ breed: 'birds' });
-
-//     const pets = [cats, dogs, fish, birds];
-//     res.render('pets/index', {
-//         pets: pets
-//     })
-// }
 async function index(req, res) {
-    const cats = await Pet.find({ breed: 'cats' });
+    const pets = await Pet.find({});
     res.render('pets/index', {
-        pets: cats
+        pets
     })
 }
-
+async function show(req, res) {
+    try {
+        const pet = await Pet.findById(req.params.id);
+        res.render('pets/show', {
+            pet
+        })
+    } catch {
+        console.log('error')
+    }
+}
 async function edit(req, res) {
-    // const { id } = req.params;
-    const pets = await Pet.find({});
+    const pet = await Pet.findById(req.params.id);
     res.render('pets/edit', {
-        pets: pets
+        pet
     })
+}
+async function update(req, res) {
+    try {
+        await Pet.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect('/pets/' + req.params.id)
+    } catch (e) {
+        console.log(e);
+
+    }
+
+}
+async function deletePet(req, res) {
+    try {
+        await Pet.findByIdAndRemove(req.params.id);
+        res.redirect('/pets')
+    } catch (e) {
+        console.log(e);
+    }
 }

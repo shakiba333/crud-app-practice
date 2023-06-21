@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const petSchema = new Schema({
-    breed: { type: String, enum: ['dogs', 'cats', 'fish', 'birds'] },
+    breed: { type: String, enum: ['dog', 'cat', 'fish', 'bird'] },
     age: { type: Number, default: 1 },
     name: String,
     // image: { data: Buffer, contentType: String },

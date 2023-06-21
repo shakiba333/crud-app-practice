@@ -89,3 +89,12 @@ img {
   height: 150px;
   object-fit: cover;
 }
+
+a {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+
+}

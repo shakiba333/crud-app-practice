@@ -1,40 +1,26 @@
 <%- include('../partials/header') %>
-    <h2>All Pets</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>breed</th>
-                <th>age</th>
-                <th>name</th>
-                <th>gender</th>
-                <th>weight</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Write the line of EJS to iterate over movies using forEach -->
-
-
-
-            <tr>
-                <td>
-                    <%= p.breed %>
-                </td>
-                <td>
-                    <%= p.age%>
-                </td>
-                <td>
-                    <%= p.name %>
-                </td>
-                <td>
-                    <%= p.gender %>
-                </td>
-                <!-- finish the ternary expression to display ' Yes' or 'Nope' -->
-                <td>
-                    <%= p.weight %>
-                </td>
-            </tr>
-            <!-- Close the forEach using EJS here -->
-
-        </tbody>
-    </table>
+    <h1>Show Page</h1>
+    <p>Breed:
+        <%= pet.breed%>
+    </p>
+    <p>Age:
+        <%= pet.age%>
+    </p>
+    <p>Name
+        <%= pet.name %>
+    </p>
+    <p>Gender
+        <%= pet.gender %>
+    </p>
+    <p>Weight
+        <%= pet.weight %>
+    </p>
+    <p>
+        <%= pet.id %>
+    </p>
+    <p><a href="/pets/edit/<%=pet.id%>">edit</a></p>
+    <p>
+    <form action="/pets/<%=pet.id%>?_method=DELETE" method="post"><button type="submit">Delete</button></form>
+    </p>
+    <hr>
     <%- include('../partials/footer') %>
