@@ -1,15 +1,22 @@
 <%- include('../partials/header') %>
-    <h2>All Pets</h2>
-    <!-- Write the line of EJS to iterate over movies using forEach -->
-
-
+    <h2><u>List of Available Pets</u></h2>
     <% pets.forEach(function(p){ %>
-        <p>Breed:
-            <%= p.breed %>
-        </p>
-        <p><a href="/pets/<%=p.id%>">Details</a></p>
-        <hr>
+
+        <div class="itemPet">
+            <h3>
+                Name: <%= p.name %>
+            </h3>
+            <br>
+            <h3><u>Pet Available</u></h3><input type="checkbox" checked><br>
+            <h3><u>Current Status for Adoption:</u></h3><br>
+            <p>Call now to adopt!</p><br>
+            <a href="/pets/<%= p.id%>" class="editBut">Click here to see more!</a>
+        </div>
+
         <% }) %>
+            <p>
+                <%= errorMsg %>
+            </p>
 
 
             <%- include('../partials/footer') %>

@@ -13,7 +13,6 @@ function newPets(req, res) {
     res.render('pets/new', { errorMsg: '' });
 }
 async function create(req, res) {
-
     try {
         await Pet.create(req.body);
         res.redirect('/pets');
@@ -24,33 +23,44 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-    const pets = await Pet.find({});
-    res.render('pets/index', {
-        pets
-    })
+    try {
+        const pets = await Pet.find({});
+        res.render('pets/index', {
+            pets,
+            errorMsg: ''
+        })
+    } catch (err) {
+        res.render(`/pets/index`, { errorMsg: err.message });
+    }
 }
 async function show(req, res) {
     try {
         const pet = await Pet.findById(req.params.id);
         res.render('pets/show', {
-            pet
+            pet,
+            errorMsg: ''
         })
-    } catch {
-        console.log('error')
+    } catch (err) {
+        res.render(`/pets/show`, { errorMsg: err.message });
     }
 }
 async function edit(req, res) {
-    const pet = await Pet.findById(req.params.id);
-    res.render('pets/edit', {
-        pet
-    })
+    try {
+        const pet = await Pet.findById(req.params.id);
+        res.render('pets/edit', {
+            pet,
+            errorMsg: ''
+        })
+    } catch (err) {
+        res.render(`/pets/edit`, { errorMsg: err.message });
+    }
 }
 async function update(req, res) {
     try {
         await Pet.findByIdAndUpdate(req.params.id, req.body);
         res.redirect('/pets/' + req.params.id)
-    } catch (e) {
-        console.log(e);
+    } catch (err) {
+        res.render(`/pets/${req.params.id}/edit`, { errorMsg: err.message });
 
     }
 
@@ -59,7 +69,8 @@ async function deletePet(req, res) {
     try {
         await Pet.findByIdAndRemove(req.params.id);
         res.redirect('/pets')
-    } catch (e) {
-        console.log(e);
+    } catch (err) {
+        res.render('/pets', { errorMsg: err.message });
+
     }
 }

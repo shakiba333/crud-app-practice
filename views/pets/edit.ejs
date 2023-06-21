@@ -1,41 +1,40 @@
-<%- include('../partials/header') %>
-
+<%- include("../partials/header") %>
     <div id="container">
-        <h2>Enter a New Pet</h2>
-        <form action="/pets/<%=pet.id%>?_method=PUT" method="POST">
-            <label class="centerlabel">Breed
-                <select name="breed">
-                    <option value="<%= pet.breed %>">
-                        <%= pet.breed %>
-                    </option>
-                    <option value="cats">cats</option>
-                    <option value="dogs">dogs</option>
-                    <option value="birds">birds</option>
-                    <option value="fish">fish</option>
-                </select>
-            </label>
-            <label class="centerlabel">Age:
-                <input type="number" name="age" value="<%= pet.age %>">
-            </label>
+        <h1>Edit "<%= pet.name %> 's" Posting</h1>
+        <p>Need to make changes? Fill out the form below!</p>
 
-            <label class="centerlabel">Gender:
-                <select name="gender">
-                    <option value="<%= pet.gender %>">
-                        <%= pet.gender %>
-                    </option>
-                    <option value="male">male</option>
-                    <option value="female">female</option>
+        <form action="/pets/<%= pet.id %>?_method=PUT" method="POST">
+            <h3><label for="name">Update the name of your pet:</label></h3>
+            <input type="text" name="name" value="<%= pet.name %>" />
 
-                </select>
-            </label><br>
-            <label class="centerlabel">Name:
-                <input type="text" name="name" value="<%= pet.name %>">
-            </label>
-            <label class="centerlabel">Weight:
-                <input type="number" name="weight" value="<%= pet.weight %>">
-            </label>
-            <button type="submit">Update</button>
+            <h3><label for="breed">Update your pet's breed:</label></h3>
+            <select name="breed" value=" <%= pet.breed %>">
+                <optgroup label="Animal Types">
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    <option value="fish">Fish</option>
+                    <option value="bird">Bird</option>
+                </optgroup>
+            </select>
+            <h3><label for="age">Update the age of your pet:</label></h3>
+            <input type="number" name="age" value="<%= pet.age %>" />
+
+            <h3><label for="gender">Update the gender of your pet:</label></h3>
+            <select name="gender" value="<%= pet.gender %>">
+                <optgroup label="Please Select a Gender">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </optgroup>
+            </select>
+
+            <h3><label for="weight">Your pet gain or lose weight? Update here:</label></h3>
+            <input type="number" name="weight" value="<%= pet.weight %>" />
+
+            <button type="submit">Update Posting</button>
+
         </form>
+        <p>
+            <%= errorMsg %>
+        </p>
     </div>
-
-    <%- include('../partials/footer') %>
+    <%- include("../partials/footer") %>

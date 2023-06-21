@@ -1,29 +1,51 @@
 * {
-  box-sizing: border-box;
-  margin: auto;
+  margin: 0;
 }
 
+html,
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+  background-image: url("https://img.freepik.com/free-vector/frame-with-dogs-vector-white-background_53876-127700.jpg?w=1380&t=st=1687365631~exp=1687366231~hmac=60c9288a573058d02d0e93915a0e8634d8ac974c70ec8f5e9f12fa28fb75fa6c");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  text-align: center;
+  align-content: center;
+}
+
+nav {
+  width: 100%;
+  background-color: rgba(112, 109, 104, 0.9);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 
-nav {
-  display: block;
-  width: 100%;
 
+li {
+  float: left;
+}
+
+.editBut {
+  color: rgb(233, 189, 43);
+  font-size: 14px;
+  text-align: center;
 }
 
 ul {
+  display: flex;
+  align-content: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
 }
 
 li a {
@@ -32,19 +54,26 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+
 }
 
 li a:hover {
   background-color: #111;
 }
 
-div {
+#container {
   width: 60vmin;
   height: 60vmin;
   padding: 2vmin;
   margin-top: 4vmin;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
   text-align: center;
+  background-color: rgba(112, 109, 104, 0.9);
+  color: #fff;
+  border-radius: 25px;
+
 }
 
 input {
@@ -63,38 +92,59 @@ select {
 }
 
 h2 {
-  margin-bottom: 4vmin;
+  margin-top: 2vmin;
   text-align: center;
+  color: #111;
 }
-
 
 button {
   font-size: 2vmin;
-  background-color: #111;
+  background-color: rgba(112, 109, 104, 0.9);
   color: white;
   margin: 0;
   text-align: center;
+  padding: 1vmin;
+  border-radius: 10px;
+  border: 2px solid #111;
 }
 
-.petDivs {
+h3 {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+
+
+p {
+  text-transform: capitalize;
+}
+
+.smol {
+  text-transform: none;
+}
+
+.itemPet {
+  background-color: rgba(112, 109, 104, 0.9);
+  color: #fff;
+  width: 25vmin;
+  height: 20vmin;
+  margin: 3vmin;
+  padding: 1vmin;
+  border-radius: 25px;
   display: inline-block;
-  width: 20vmin;
-  height: 30vmin;
-  border: 1vmin solid #111;
-  text-align: center;
 }
 
-img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+.center {
+  margin-top: 20vmin;
 }
 
-a {
-  background-color: #111;
-  color: white;
-  text-align: center;
-  width: 60px;
-  height: 60px;
-
+.linkStyle {
+  text-decoration: none;
+  font-size: 2vmin;
+  background-color: rgba(112, 109, 104, 0.9);
+  color: #fff;
+  padding: 1vmin;
+  display: inline-block;
+  margin-bottom: 2vmin;
+  border-radius: 10px;
 }

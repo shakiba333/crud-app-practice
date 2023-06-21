@@ -1,26 +1,39 @@
 <%- include('../partials/header') %>
-    <h1>Show Page</h1>
-    <p>Breed:
-        <%= pet.breed%>
-    </p>
-    <p>Age:
-        <%= pet.age%>
-    </p>
-    <p>Name
-        <%= pet.name %>
-    </p>
-    <p>Gender
-        <%= pet.gender %>
-    </p>
-    <p>Weight
-        <%= pet.weight %>
-    </p>
-    <p>
-        <%= pet.id %>
-    </p>
-    <p><a href="/pets/edit/<%=pet.id%>">edit</a></p>
-    <p>
-    <form action="/pets/<%=pet.id%>?_method=DELETE" method="post"><button type="submit">Delete</button></form>
-    </p>
-    <hr>
+    <div class="center">
+        <h1>Details:</h1>
+        <br>
+        <br>
+        <h3><u>Pet Available</u></h3>
+        <br>
+        <p>
+            <%= pet.name %>
+                <br>
+                <br>
+                Breed: <%= pet.breed %>
+
+                    <br>
+                    <br>
+                    Age: <%= pet.age %> year(s) old
+                        <br>
+                        <br>
+                        Gender: <%= pet.gender %>
+
+                            <br>
+                            <br>
+                            Weight: <%= pet.weight %> lbs
+
+                                <br>
+                                <br>
+                                <br>
+                                <a class="linkStyle" href="/pets/edit/<%=pet.id%>">edit</a>
+                                <form action="/pets/<%=pet.id%>?_method=DELETE" method="post"><button
+                                        type="submit">Delete the post?</button>
+                                </form>
+                                <p>
+                                    <%= errorMsg %>
+                                </p>
+
+    </div>
+
+
     <%- include('../partials/footer') %>
